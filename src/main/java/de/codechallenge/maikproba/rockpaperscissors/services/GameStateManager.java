@@ -139,6 +139,7 @@ public class GameStateManager {
             return gameState.getPlayer2();
         }
 
+        round.setResult("It's a tie!");
         return null;
     }
 

@@ -22,6 +22,10 @@ public class Round {
         this.handSignPlayer2 = handSignPlayer2;
     }
 
+    public String getResult() {
+        return result;
+    }
+
     public void setResult(String result) {
         this.result = result;
     }
