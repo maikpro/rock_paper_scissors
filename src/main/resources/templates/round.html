@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        padding: 20px;
+        margin-left: 10px;
+    }
+
+    .card i {
+        font-size: 70px;
+    }
+
+    .card:nth-child(1) {
+        margin-left: 0;
+    }
+
+    .decision {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    #send {
+        padding: 5px 15px;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+<form method="post" th:action="${link}">
+    <h1 th:text="'Round ' + ${roundIndex}"></h1>
+    <h1 th:text="${playerName} + ' choose your handsign:'"></h1>
+    <div class="decision">
+        <div class="card">
+            <i class="fa-regular fa-hand-back-fist"></i>
+            <label for="rock">Rock</label>
+            <input type="radio" name="handSign" id="rock" value="ROCK">
+        </div>
+
+        <div class="card">
+            <i class="fa-regular fa-hand"></i>
+            <label for="paper">Paper</label>
+            <input type="radio" name="handSign" id="paper" value="PAPER">
+        </div>
+
+        <div class="card">
+            <i class="fa-regular fa-hand-scissors"></i>
+            <label for="rock">Scissors</label>
+            <input type="radio" name="handSign" id="scissors" value="SCISSORS">
+        </div>
+    </div>
+
+    <input id="send" type="submit" value="Send"> <br>
+    <a th:href="'/uuid/' + ${gameUUID} + '/result'">Show result in JSON!</a>
+</form>
+</body>
+</html>
