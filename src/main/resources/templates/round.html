@@ -40,9 +40,9 @@
     }
 </style>
 <body>
-<form method="post" th:action="${link}">
-    <h1 th:text="'Round ' + ${roundIndex}"></h1>
-    <h1 th:text="${playerName} + ' choose your handsign:'"></h1>
+<form method="post" th:action="${roundStateDTO.linkForNextRound}">
+    <h1 th:text="'Round ' + ${roundStateDTO.roundIndex}"></h1>
+    <h1 th:text="${roundStateDTO.playerName} + ' choose your handsign:'"></h1>
     <div class="decision">
         <div class="card">
             <i class="fa-regular fa-hand-back-fist"></i>
@@ -58,13 +58,13 @@
 
         <div class="card">
             <i class="fa-regular fa-hand-scissors"></i>
-            <label for="rock">Scissors</label>
+            <label for="scissors">Scissors</label>
             <input type="radio" name="handSign" id="scissors" value="SCISSORS">
         </div>
     </div>
 
     <input id="send" type="submit" value="Send"> <br>
-    <a th:href="'/uuid/' + ${gameUUID} + '/result'">Show result in JSON!</a>
+    <a th:href="'/uuid/' + ${roundStateDTO.gameUUID} + '/result'">Show result in JSON!</a>
 </form>
 </body>
 </html>

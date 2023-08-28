@@ -11,13 +11,12 @@
 </style>
 <body>
     <div class="result">
-        <h1 th:text="'And the winner of this game is: ' + ${winner}"></h1>
-        <h1 th:text="${playerName}"></h1>
+        <h1 th:text="'And the winner of this game is: ' + ${roundStateDTO.winnerOfGame}"></h1>
     </div>
 
     <div class="links">
         <p>
-            <a th:href="'/uuid/' + ${gameUUID} + '/result'">Show result in JSON!</a>
+            <a th:href="'/uuid/' + ${roundStateDTO.gameUUID} + '/result'">Show result in JSON!</a>
         </p>
         <p>
             <a href="/start">Play again!</a>
