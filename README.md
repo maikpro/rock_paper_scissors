@@ -22,7 +22,7 @@ Rock, Paper, Scissors is a simple game usually played between two people. The pl
 ## Documentation
 
 ### Run application
-In root directory run
+In root directory run 
 `./gradlew bootRun`
 
 ### testing application
