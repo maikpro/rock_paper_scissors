@@ -20,4 +20,28 @@ Rock, Paper, Scissors is a simple game usually played between two people. The pl
 * Build tool gradle
 
 ## Documentation
-coming soon...
+
+### Run application
+In root directory run
+`./gradlew bootRun`
+
+### testing application
+`./gradlew clean test --info`
+
+### Play the game
+1. Visit: http://localhost:8080 and `start the game!`
+Have fun! :-)
+
+![Start](./screenshots/start.png)
+
+2. Choose your handsign and play alternately
+
+![Decision](./screenshots/decision.png)
+
+3. In each round you can show results in JSON format by clicking on `show result in JSON`:
+
+![Round_in_JSON](./screenshots/round_in_json.png)
+
+4. After three rounds the game ends and the winner will be displayed:
+
+![result](./screenshots/result.png)
